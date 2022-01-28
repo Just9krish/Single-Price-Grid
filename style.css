@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/* resizing a default padding and margin */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Defining variable for color */
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Light-Cyan: #4abebd;
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+/* Inherit the border-box box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  line-height: 1;
+}
+
+/* Setting the main element */
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* using grid in container to position different division */
+.container {
+  flex: 1;
+  max-width: 64.3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  box-shadow: 0 0 10px #b8c2c6;
+  margin: 2.5rem;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+.container > * {
+  padding: 4.2rem;
+}
+
+/* Top section with white color */
+
+/* Making the divison to stack one on other one  */
+.whiteBGsection {
+  grid-column: 1/-1;
+  background-color: white;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.cyan-h {
+  color: #2ab2af;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.head-discription {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.yellow-p {
+  color: var(--Bright-Yellow);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.gray-p {
+  color: var(--Grayish-Blue);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* Left side block with cyan color */
+.left-cyan {
+  background-color: var(--Cyan);
+  border-bottom-left-radius: 0.8rem;
+}
+
+.left-heading,
+.right-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.white-h {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subscription-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.price-title {
+  color: var(--Light-Gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.per-month-box {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 1.2rem;
+}
+.per-month-box__price {
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.per-month-box__text {
+  color: var(--Grayish-Blue);
+  font-size: 1.7rem;
+}
+
+/* Styling the Sing Up button */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem 4.4rem;
+  color: white;
+  box-shadow: 0 0 1.2rem #798ba9;
+  background-color: var(--Bright-Yellow);
+  font-size: 1.6rem;
+}
+
+.btn:hover{
+    color: var(--Light-Gray);
+}
+/* Right side block with light cyan color */
+.right-lightcyan {
+  background-color: var(--Light-Cyan);
+  border-bottom-right-radius: 0.8rem;
+}
+
+.lightcyan-para {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--Light-Gray);
+  font-size: 1.4rem;
+}
+
+/* <-------------------- Media Quries --------------------> */
+
+/* Screen for small device like mobile and tablet */
+
+@media (max-width: 33.25rem) {
+  .container {
+    max-width: 36rem;
+  }
+
+  .container > * {
+    padding: 2.4rem;
+  }
+
+  .left-cyan,
+  .right-lightcyan {
+    grid-column: 1/-1;
+  }
+
+  .left-cyan {
+    border-bottom-left-radius: 0;
+  }
+
+  .right-lightcyan {
+    border-bottom-left-radius: 0.8rem;
+  }
+}
